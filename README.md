@@ -15,6 +15,7 @@ but some scripts may work with bundled PowerShell interpreter.
 - [PowerShell](https://github.com/PowerShell/PowerShell)
 - [Windows Terminal](https://www.microsoft.com/en-us/p/windows-terminal/9n0dx20hk701)
 - [git](https://git-scm.com/)
+- [Gpg4win](https://gpg4win.org/)
 
 ## Reposutory Contents
 
@@ -23,6 +24,8 @@ but some scripts may work with bundled PowerShell interpreter.
 - [WindowsTerminal.json](#windowsterminaljson)
 - [gitconfig](#gitconfig)
 - [global_gitignore](#global_gitignore)
+- [gpg-agent.conf](#gpg-agentconf)
+- [gpg.conf](#gpgconf)
 
 ### `Microsoft.PowerShell_profile.ps1`
 
@@ -56,3 +59,17 @@ Should be copied to `$env:USERPROFILE\.gitconfig`.
 Global [git](https://git-scm.com/) [ignore file](https://git-scm.com/docs/gitignore).
 
 Should be copied to `$env:USERPROFILE\.gitignore`.
+
+### `gpg-agent.conf`
+
+[GnuPG Agent configuration](https://www.gnupg.org/(de)/documentation/manuals/gnupg/Agent-Configuration.html)
+file read by gpg-agent on startup.
+
+Should be copied to `$env:APPDATA\gnupg\gpg-agent.conf`.
+
+### `gpg.conf`
+
+[GnuPG configuration](https://www.gnupg.org/documentation/manuals/gnupg/GPG-Configuration.html)
+file read by gpg on startup.
+
+Should be copied to `$env:APPDATA\gnupg\gpg.conf`.
