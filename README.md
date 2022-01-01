@@ -16,6 +16,7 @@ but some scripts may work with bundled PowerShell interpreter.
 - [Windows Terminal](https://www.microsoft.com/en-us/p/windows-terminal/9n0dx20hk701)
 - [git](https://git-scm.com/)
 - [Gpg4win](https://gpg4win.org/)
+- [Visual Studio Code](https://code.visualstudio.com/)
 
 ## Reposutory Contents
 

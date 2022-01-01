@@ -15,7 +15,7 @@
 	excludesFile = C:\\Users\\egrep\\.gitignore
 
 [gpg]
-	program = c:/Program Files (x86)/GnuPG/bin/gpg.exe
+	program = C:/Program Files (x86)/GnuPG/bin/gpg.exe
 
 [pull]
 	rebase = true
@@ -40,6 +40,11 @@
 
 [diff]
 	colormoved = zebra
+	tool = vscode
+
+[difftool "vscode"]
+	cmd = \"C:\\Program Files\\Microsoft VS Code\\Code.exe\" \"$LOCAL\" \"$REMOTE\" --diff --wait
+	trustExitCode = true
 
 [difftool]
 	prompt = false
