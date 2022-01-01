@@ -13,6 +13,7 @@ but some scripts may work with bundled PowerShell interpreter.
 
 - [oh-my-posh](https://ohmyposh.dev/)
 - [PowerShell](https://github.com/PowerShell/PowerShell)
+- [Windows Terminal](https://www.microsoft.com/en-us/p/windows-terminal/9n0dx20hk701)
 
 ## Reposutory Contents
 
@@ -29,3 +30,10 @@ Should be copied to `$PROFILE.CurrentUserCurrentHost`.
 [Oh My Posh](https://ohmyposh.dev/) configuration file.
 
 Should be copied to `$env:USERPROFILE\ohmyposhv3-v2.json`.
+
+### `WindowsTerminal.json`
+
+[Windows Terminal](https://www.microsoft.com/en-us/p/windows-terminal/9n0dx20hk701)
+settings JSON file.
+
+Should be copied to `$env:LOCALAPPDATA\Packages\Microsoft.WindowsTerminal_8wekyb3d8bbwe\LocalState\settings.json`.
