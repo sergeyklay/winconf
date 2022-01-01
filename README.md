@@ -14,6 +14,7 @@ but some scripts may work with bundled PowerShell interpreter.
 - [oh-my-posh](https://ohmyposh.dev/)
 - [PowerShell](https://github.com/PowerShell/PowerShell)
 - [Windows Terminal](https://www.microsoft.com/en-us/p/windows-terminal/9n0dx20hk701)
+- [git](https://git-scm.com/)
 
 ## Reposutory Contents
 
@@ -37,3 +38,15 @@ Should be copied to `$env:USERPROFILE\ohmyposhv3-v2.json`.
 settings JSON file.
 
 Should be copied to `$env:LOCALAPPDATA\Packages\Microsoft.WindowsTerminal_8wekyb3d8bbwe\LocalState\settings.json`.
+
+### `gitconfig`
+
+Global [git](https://git-scm.com/) config.
+
+Should be copied to `$env:USERPROFILE\.gitconfig`.
+
+### `global_gitignore`
+
+Global [git](https://git-scm.com/) [ignore file](https://git-scm.com/docs/gitignore).
+
+Should be copied to `$env:USERPROFILE\.gitignore`.

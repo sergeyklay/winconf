@@ -1,0 +1,99 @@
+[user]
+	name = Serghei Iakovlev
+	email = egrep@protonmail.ch
+	signingkey = C6AF1016BBDEA800
+
+[core]
+	autocrlf = input
+	safecrlf = warn
+	whitespace = trailing-space,space-before-tab,indent-with-non-tab
+	pager = less -FRSX
+	precomposeunicode = true
+	quotePath = false
+	editor = vim
+	filemode = false
+	excludesFile = C:\\Users\\egrep\\.gitignore
+
+[gpg]
+	program = c:/Program Files (x86)/GnuPG/bin/gpg.exe
+
+[pull]
+	rebase = true
+
+[push]
+	default = simple
+
+[commit]
+	gpgsign = true
+
+[tag]
+	forceSignAnnotated = true
+
+[fetch]
+	prune = true
+
+[merge]
+	stat = true
+
+[mergetool]
+	prompt = false
+
+[diff]
+	colormoved = zebra
+
+[difftool]
+	prompt = false
+
+[alias]
+	hist = log --graph --decorate --pretty=format:\"%Cred%h%Creset | %Cgreen%ad%Creset | %s%d [%C(yellow)%an%Creset]\" --graph --date=local
+	type = cat-file -t
+	dump = cat-file -p
+	rma = !git ls-files --deleted -z | xargs -0 --no-run-if-empty git rm
+	sc = !git stash && git co master && git fetch --all && git rebase origin/master && git stash pop
+	aliases = "!git config -l | grep alias | cut -c 7-"
+	br = branch
+	st = status
+	ss = status --short
+	sd = diff --stat
+	ci = commit
+	co = checkout
+	dc = diff --cached
+	rp = remote prune
+	rs = remote show
+	lg = log -p
+	lol = log --graph --decorate --pretty=oneline --abbrev-commit
+	lola = log --graph --decorate --pretty=oneline --abbrev-commit --all
+	ls = ls-files
+	ign = ls-files -o -i --exclude-standard
+	lt = describe --tags --abbrev=0
+	save = !git stash save $(date "+%F_%T")
+	sf = show --pretty="format:" --name-only
+	ign = ls-files -o -i --exclude-standard
+	last = log -1 HEAD
+	mf = merge --no-ff
+	puhs = push
+	patch = !git --no-pager diff --no-color
+	count = !~/bin/git-count
+
+[color]
+	status = auto
+	branch = auto
+	interactive = auto
+	diff = auto
+	ui = auto
+	grep = auto
+	decorate = auto
+	showbranch = auto
+	pager = true
+
+[color "branch"]
+	current = cyan
+
+[color "status"]
+	untracked = cyan
+
+[filter "lfs"]
+	required = true
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process

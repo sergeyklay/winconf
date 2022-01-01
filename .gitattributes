@@ -3,11 +3,13 @@
 # For more see: https://git-scm.com/docs/gitattributes
 
 # Source code. Include these files to GitHub Linguist statistics.
-*.ps1   text eol=crlf language-linguist=powershell
-*.json  text eol=crlf language-linguist=JSON linguist-detectable=true
+*.ps1            text eol=crlf linguist-language=powershell
+*.json           text eol=crlf linguist-languaget=JSON linguist-detectable=true
+gitconfig        text eol=lf linguist-language=gitconfig
+global_gitignore text eol=lf linguist-language=gitignore
 
 # IDE files. Include these files to GitHub Linguist statistics.
-*.code-workspace  text eol=crlf language-linguist=JSON linguist-detectable=true
+*.code-workspace  text eol=crlf linguist-language=jsonc linguist-detectable=true
 
 # Documentation.
 *.md text eol=crlf
