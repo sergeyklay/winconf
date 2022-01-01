@@ -18,6 +18,12 @@ but some scripts may work with bundled PowerShell interpreter.
 
 ## Reposutory Contents
 
+- [Microsoft.PowerShell_profile.ps1](#microsoftpowershell_profileps1)
+- [ohmyposhv3-v2.json](#ohmyposhv3-v2json)
+- [WindowsTerminal.json](#windowsterminaljson)
+- [gitconfig](#gitconfig)
+- [global_gitignore](#global_gitignore)
+
 ### `Microsoft.PowerShell_profile.ps1`
 
 [PowerShell](https://github.com/PowerShell/PowerShell) profile file to
