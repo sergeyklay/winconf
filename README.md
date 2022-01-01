@@ -13,3 +13,19 @@ but some scripts may work with bundled PowerShell interpreter.
 
 - [oh-my-posh](https://ohmyposh.dev/)
 - [PowerShell](https://github.com/PowerShell/PowerShell)
+
+## Reposutory Contents
+
+### `Microsoft.PowerShell_profile.ps1`
+
+[PowerShell](https://github.com/PowerShell/PowerShell) profile file to
+customize you environment and to add session-specific elements to every
+PowerShell session that you start.
+
+Should be copied to `$PROFILE.CurrentUserCurrentHost`.
+
+### `ohmyposhv3-v2.json`
+
+[Oh My Posh](https://ohmyposh.dev/) configuration file.
+
+Should be copied to `$env:USERPROFILE\ohmyposhv3-v2.json`.
