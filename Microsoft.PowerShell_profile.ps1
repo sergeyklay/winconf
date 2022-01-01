@@ -1,5 +1,5 @@
 #
-# Profile file
+# Profile file.
 #
 # Copy this file to `$PROFILE` path.
 #
