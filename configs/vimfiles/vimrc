@@ -87,6 +87,18 @@ if has("autocmd")
         au BufRead,BufNewFile *.json setlocal ts=4 sw=4 sts=4 et
         au Filetype css setlocal ts=4 sw=4 et
     augroup END
+
+    augroup templates
+        " Delete any old autocommands
+        au!
+
+        " To be run each time the “starting to edit a non-existent file”
+        " event happens. If the file has one of the following extensions read
+        " the contents of skeleton.<ext> and inserted it at line 0.
+        au BufNewFile *.c   0r $HOME\vimfiles\templates\skeleton.c
+        au BufNewFile *.cpp 0r $HOME\vimfiles\templates\skeleton.cpp
+        au BufNewFile *.sh  0r $HOME\vimfiles\templates\skeleton.sh
+    augroup END
 endif
 
 " vim:ft=vim:ts=4:sw=4:sts=4:tw=80:fenc=utf-8:et

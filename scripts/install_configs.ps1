@@ -16,4 +16,4 @@ Copy-Item -Path "${ConfigRoot}\gpg.conf" -Destination $env:APPDATA\gnupg\gpg.con
 Copy-Item -Path "${ConfigRoot}\gpg-agent.conf" -Destination $env:APPDATA\gnupg\gpg-agent.conf
 
 New-Item -ItemType Directory -Force -Path "${env:USERPROFILE}\vimfiles" | Out-Null
-Robocopy "${ConfigRoot}\vimfiles" "${env:USERPROFILE}\vimfiles" /Z /W:5 /NFL /NDL /NJH /NJS /NP /NS /NC
+Robocopy "${ConfigRoot}\vimfiles" "${env:USERPROFILE}\vimfiles" /Z /W:5 /E /NFL /NDL /NJH /NJS /NP /NS /NC
