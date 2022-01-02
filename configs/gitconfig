@@ -10,7 +10,7 @@
 	pager = less -FRSX
 	precomposeunicode = true
 	quotePath = false
-	editor = vim
+	editor = code --wait
 	filemode = false
 	excludesFile = C:\\Users\\egrep\\.gitignore
 
@@ -43,7 +43,7 @@
 	tool = vscode
 
 [difftool "vscode"]
-	cmd = \"C:\\Users\\egrep\\AppData\\Local\\Programs\\Microsoft VS Code\\Code.exe\" \"$LOCAL\" \"$REMOTE\" --diff --wait
+	cmd = code --wait --diff $LOCAL $REMOTE
 	trustExitCode = true
 
 [difftool]
