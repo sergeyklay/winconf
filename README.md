@@ -13,9 +13,11 @@ but some scripts may work with bundled PowerShell interpreter.
 
 - [PowerShell](https://github.com/PowerShell/PowerShell)
 
-## Reposutory Contents
+## Repository Contents
 
-### Scripts (`scripts/`)
+### Scripts
+
+These files are located in `scripts/` directory.
 
 - [install_apps.ps1](#install_appsps1)
 - [install_configs.ps1](#install_configsps1)
@@ -28,7 +30,9 @@ Application installer.
 
 Configuration installer.
 
-### Configurations (`configs/`)
+### Configurations
+
+These files are located in `configs/` directory.
 
 - [Microsoft.PowerShell_profile.ps1](#microsoftpowershell_profileps1)
 - [ohmyposhv3-v2.json](#ohmyposhv3-v2json)
