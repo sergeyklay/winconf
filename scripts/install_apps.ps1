@@ -4,7 +4,9 @@ Write-Host "------------------------------------" -ForegroundColor Green
 $common_apps = @(
     "7zip.7zip",
     "DjVuLibre.DjView",
-    "Telegram.TelegramDesktop")
+    "Telegram.TelegramDesktop",
+    "Zoom.Zoom",
+    "SlackTechnologies.Slack")
 foreach ($app in $common_apps) {
     winget install --exact --id $app
 }
