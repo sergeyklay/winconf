@@ -7,7 +7,9 @@ $common_apps = @(
     "Telegram.TelegramDesktop",
     "Zoom.Zoom",
     "SlackTechnologies.Slack",
-    "VideoLAN.VLC")
+    "VideoLAN.VLC",
+    "clsid2.mpc-hc",
+    "qBittorrent.qBittorrent")
 foreach ($app in $common_apps) {
     winget install --exact --id $app
 }
