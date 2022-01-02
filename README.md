@@ -93,6 +93,6 @@ Should be copied to `$env:APPDATA\gnupg\gpg.conf`.
 
 #### `vimfiles`
 
-Local Vim configuration directory.
+Local [Vim](https://www.vim.org/) configuration directory.
 
-Should be copied to `$HOME\\vimfiles`.
+Should be copied to `$env:USERPROFILE\vimfiles`.
