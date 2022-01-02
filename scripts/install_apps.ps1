@@ -13,7 +13,8 @@ $common_apps = @(
     "VideoLAN.VLC",
     "clsid2.mpc-hc",
     "qBittorrent.qBittorrent",
-    "Rufus.Rufus")
+    "Rufus.Rufus",
+    "CPUID.CPU-Z")
 foreach ($app in $common_apps) {
     winget install --exact --id $app
 }
