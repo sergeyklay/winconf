@@ -19,10 +19,15 @@ but some scripts may work with bundled PowerShell interpreter.
 ### Scripts
 
 - [install_apps.ps1](#install_appsps1)
+- [install_configs.ps1](#install_configsps1)
 
 #### `install_apps.ps1`
 
 Application installer.
+
+#### `install_configs.ps1`
+
+Configuration installer.
 
 ### Configurations
 
