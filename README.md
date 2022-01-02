@@ -13,10 +13,27 @@ but some scripts may work with bundled PowerShell interpreter.
 
 - [oh-my-posh](https://ohmyposh.dev/)
 - [PowerShell](https://github.com/PowerShell/PowerShell)
-- [Windows Terminal](https://www.microsoft.com/en-us/p/windows-terminal/9n0dx20hk701)
 - [git](https://git-scm.com/)
-- [Gpg4win](https://gpg4win.org/)
-- [Visual Studio Code](https://code.visualstudio.com/)
+
+## Getting Started
+
+### Gpg4win
+
+```powershell
+winget install GnuPG.Gpg4win
+```
+
+### Windows Terminal
+
+```poweshell
+winget install Microsoft.WindowsTerminal
+```
+
+### Visual Studio Code
+
+```powershell
+winget install Microsoft.VisualStudioCode
+```
 
 ## Reposutory Contents
 
