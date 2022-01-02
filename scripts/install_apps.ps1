@@ -42,14 +42,19 @@ $dev_essentials = @(
     "Microsoft.VisualStudioCode",
     "vim.vim",
     "Git.Git",
+    "GitHub.cli",
     "GnuPG.Gpg4win",
     "DBBrowserForSQLite.DBBrowserForSQLite")
 foreach ($app in $dev_essentials) {
     winget install --exact --id $app
 }
 
-
-Write-Host "Installing GitHub.cli..."
+Write-Host "Installing languages..."
 Write-Host "------------------------------------" -ForegroundColor Green
 
-winget install --exact --id GitHub.cli --source winget
+$languages = @(
+    "Python.Python.3",
+    "GoLang.Go")
+foreach ($app in $languages) {
+    winget install --exact --id $app
+}
