@@ -9,7 +9,8 @@ $common_apps = @(
     "SlackTechnologies.Slack",
     "VideoLAN.VLC",
     "clsid2.mpc-hc",
-    "qBittorrent.qBittorrent")
+    "qBittorrent.qBittorrent",
+    "Rufus.Rufus")
 foreach ($app in $common_apps) {
     winget install --exact --id $app
 }
