@@ -12,6 +12,7 @@ but some scripts may work with bundled PowerShell interpreter.
 ## Prerequisites
 
 - [PowerShell](https://github.com/PowerShell/PowerShell)
+- [Caskaydia Cove Nerd Font](https://www.nerdfonts.com/font-downloads)
 
 ## Repository Contents
 
