@@ -15,7 +15,8 @@ configs/gpg-agent.conf   text eol=lf linguist-language=INI linguist-detectable=t
 *.code-workspace  text eol=crlf linguist-language=jsonc linguist-detectable=true
 
 # Documentation.
-*.md text eol=crlf linguist-detectable=true
+*.md    text eol=crlf
+LICENSE text eol=crlf
 
 # Ignore files for distribution archives.
 .gitattributes  text eol=crlf export-ignore
