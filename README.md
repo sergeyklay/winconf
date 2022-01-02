@@ -12,6 +12,7 @@ but some scripts may work with bundled PowerShell interpreter.
 ## Prerequisites
 
 - [PowerShell](https://github.com/PowerShell/PowerShell)
+- [benpye/wsl-ssh-pageant](https://github.com/benpye/wsl-ssh-pageant)
 - [Caskaydia Cove Nerd Font](https://www.nerdfonts.com/font-downloads)
 
 ## Repository Contents
@@ -41,6 +42,7 @@ These files are located in `configs/` directory.
 - [gitconfig](#gitconfig)
 - [global_gitignore](#global_gitignore)
 - [gpg-agent.conf](#gpg-agentconf)
+- [gpg-agnet.vbs](#gpg-agnetvbs)
 - [gpg.conf](#gpgconf)
 - [vimfiles](#vimfiles)
 
@@ -83,6 +85,18 @@ Should be copied to `$env:USERPROFILE\.gitignore`.
 file read by gpg-agent on startup.
 
 Should be copied to `$env:APPDATA\gnupg\gpg-agent.conf`.
+
+#### `gpg-agnet.vbs`
+
+By default the Gpg4Win does not work with OpenSSH out of the box. It works with Putty,
+but if you want to use ssh command from your terminal, or use Visual Studio Code
+remote connection, you must do this step.
+
+This script start the GnuPG Agent on system startup and then starts
+[benpye/wsl-ssh-pageant](https://github.com/benpye/wsl-ssh-pageant).
+
+
+Should be copied to `$env:APPDATA\Microsoft\Windows\Start Menu\Programs\Startup\gpg-agnet.vbs`.
 
 #### `gpg.conf`
 

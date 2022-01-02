@@ -17,3 +17,5 @@ Copy-Item -Path "${ConfigRoot}\gpg-agent.conf" -Destination $env:APPDATA\gnupg\g
 
 New-Item -ItemType Directory -Force -Path "${env:USERPROFILE}\vimfiles" | Out-Null
 Robocopy "${ConfigRoot}\vimfiles" "${env:USERPROFILE}\vimfiles" /Z /W:5 /E /NFL /NDL /NJH /NJS /NP /NS /NC
+
+Copy-Item -Path "${ConfigRoot}\gpg-agnet.vbs" -Destination "${env:APPDATA}\Microsoft\Windows\Start Menu\Programs\Startup\gpg-agnet.vbs"
