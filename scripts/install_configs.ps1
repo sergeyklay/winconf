@@ -1,4 +1,7 @@
-$ProjectRoot = "${PSScriptRoot}\.."
+# Windows 10/11 Setup Script.
+# Run this script in PowerShell.
+
+$ProjectRoot = "${PSScriptRoot}\.." | Resolve-Path
 $ConfigRoot = "${ProjectRoot}\configs"
 
 Copy-Item -Path "${ConfigRoot}\Microsoft.PowerShell_profile.ps1" -Destination $PROFILE.CurrentUserCurrentHost

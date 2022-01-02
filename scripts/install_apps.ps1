@@ -1,3 +1,6 @@
+# Windows 10/11 Setup Script.
+# Run this script in PowerShell.
+
 Write-Host "Installing common..."
 Write-Host "------------------------------------" -ForegroundColor Green
 
