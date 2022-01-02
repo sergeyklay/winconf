@@ -59,7 +59,7 @@ au BufWritePre * let &bex = '@' . strftime("%F.%H:%M")
 set directory=$HOME\\vimfiles\\swap\\
 
 " A dedicated place to store history, commands, files, etc.
-set viminfo+=n$HOME\\vimfiles\viminfo
+set viminfo+=n$HOME\\vimfiles\\viminfo
 
 """"""""""""""""""""""
 " Automatic commands "
