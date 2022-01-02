@@ -41,6 +41,7 @@ These files are located in `configs/` directory.
 - [global_gitignore](#global_gitignore)
 - [gpg-agent.conf](#gpg-agentconf)
 - [gpg.conf](#gpgconf)
+- [vimfiles](#vimfiles)
 
 #### `Microsoft.PowerShell_profile.ps1`
 
@@ -88,3 +89,9 @@ Should be copied to `$env:APPDATA\gnupg\gpg-agent.conf`.
 file read by gpg on startup.
 
 Should be copied to `$env:APPDATA\gnupg\gpg.conf`.
+
+#### `vimfiles`
+
+Local Vim configuration directory.
+
+Should be copied to `$HOME\\vimfiles`.

@@ -1,0 +1,92 @@
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"
+" My personal configuration Vim for that I use on the daily and port
+" around from system to system with me.
+"
+" Copyright (C) 2014-2021 Serghei Iakovlev <egrep@protonmail.ch>
+"
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+" Enable syntax recognition.
+syntax on
+
+" Be iMproved.
+set nocompatible
+
+" Enable automatic indentation.
+filetype indent plugin on
+
+" A better menu in command mode. This enables to use <Left> or <Right> to
+" navigate through the completion lists.
+set wildmenu
+
+" Complete till longest common string. Also start wildmenu.
+set wildmode=longest:full,full
+
+" Show status bar.
+set laststatus=2
+
+" Display text width column.
+set colorcolumn=78
+highlight ColorColumn ctermbg=darkgray
+
+" Enable the line numbering.
+set number
+
+" Always set autoindenting on.
+set autoindent
+
+"""""""""""""""""
+" Working files "
+"""""""""""""""""
+
+" Turn on backup option.
+set backup
+
+" List of directories for the backup file.
+set backupdir=$HOME\\vimfiles\\backup\\
+
+" Make backup before overwriting the current buffer.
+set writebackup
+
+" Overwrite the original backup file.
+set backupcopy=yes
+
+" Meaningful backup name, ex: filename@2015-04-05.14:59
+au BufWritePre * let &bex = '@' . strftime("%F.%H:%M")
+
+" List of directory names for the swap file.
+set directory=$HOME\\vimfiles\\swap\\
+
+" A dedicated place to store history, commands, files, etc.
+set viminfo+=n$HOME\\vimfiles\viminfo
+
+""""""""""""""""""""""
+" Automatic commands "
+""""""""""""""""""""""
+
+" Only do this part when compiled with support for autocommands.
+if has("autocmd")
+    augroup custom
+        " Delete any old autocommands wit
+        au!
+
+        " When editing a file, always jump to the last known cursor position
+        " don't do it when the position is invalid or when inside an event
+        " handler.
+        au BufReadPost *
+                    \ if line("'\"") > 1 && line("'\"") <= line("$") |
+                    \   exe "normal! g`\"" |
+                    \ endif
+
+        " et: expandtab
+        " ts: the number of spaces that a <Tab> in the file counts for
+        " sw: the number of spaces to use when indenting
+        " sts: the number of spaces to use when expanding tabs
+        au BufRead,BufNewFile *.h,*.c setlocal ft=c ts=2 sw=2 sts=2 et
+        au BufRead,BufNewFile *.json setlocal ts=4 sw=4 sts=4 et
+        au Filetype css setlocal ts=4 sw=4 et
+    augroup END
+endif
+
+" vim:ft=vim:ts=4:sw=4:sts=4:tw=80:fenc=utf-8:et

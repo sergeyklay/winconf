@@ -7,8 +7,7 @@
 using namespace System.Management.Automation
 using namespace System.Management.Automation.Language
 
-if ($host.Name -eq 'ConsoleHost')
-{
+if ($host.Name -eq 'ConsoleHost') {
     Import-Module PSReadLine
 }
 
@@ -38,3 +37,6 @@ Import-Module -Name Terminal-Icons
 Set-PSReadLineOption -PredictionSource History
 Set-PSReadLineOption -PredictionViewStyle ListView
 Set-PSReadLineOption -EditMode Window
+
+# Setting up the path
+$env:Path += ";C:\Program Files\Vim\vim82"

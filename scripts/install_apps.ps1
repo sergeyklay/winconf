@@ -19,6 +19,7 @@ $dev_essentials = @(
     "Microsoft.WindowsTerminal",
     "JanDeDobbeleer.OhMyPosh",
     "Microsoft.VisualStudioCode",
+    "vim.vim",
     "Git.Git",
     "GnuPG.Gpg4win",
     "Microsoft.dotnet",
