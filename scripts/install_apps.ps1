@@ -6,7 +6,8 @@ $common_apps = @(
     "DjVuLibre.DjView",
     "Telegram.TelegramDesktop",
     "Zoom.Zoom",
-    "SlackTechnologies.Slack")
+    "SlackTechnologies.Slack",
+    "VideoLAN.VLC")
 foreach ($app in $common_apps) {
     winget install --exact --id $app
 }
