@@ -2,9 +2,11 @@ Write-Host "Installing common..."
 Write-Host "------------------------------------" -ForegroundColor Green
 
 $common_apps = @(
+    "7zip.7zip",
+    "DjVuLibre.DjView",
     "Telegram.TelegramDesktop")
 foreach ($app in $common_apps) {
-    winget install $app --silent
+    winget install --exact --id $app
 }
 
 Write-Host "Installing dev essentials..."
@@ -21,11 +23,11 @@ $dev_essentials = @(
     "Microsoft.dotNetFramework",
     "Microsoft.dotnetRuntime.6-x64")
 foreach ($app in $dev_essentials) {
-    winget install $app --silent
+    winget install --exact --id $app
 }
 
 
 Write-Host "Installing GitHub.cli..."
 Write-Host "------------------------------------" -ForegroundColor Green
 
-winget install GitHub.cli  --source winget --silent
+winget install --exact --id GitHub.cli --source winget
