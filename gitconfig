@@ -43,7 +43,7 @@
 	tool = vscode
 
 [difftool "vscode"]
-	cmd = \"C:\\Program Files\\Microsoft VS Code\\Code.exe\" \"$LOCAL\" \"$REMOTE\" --diff --wait
+	cmd = \"C:\\Users\\egrep\\AppData\\Local\\Programs\\Microsoft VS Code\\Code.exe\" \"$LOCAL\" \"$REMOTE\" --diff --wait
 	trustExitCode = true
 
 [difftool]
