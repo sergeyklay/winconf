@@ -11,7 +11,6 @@ but some scripts may work with bundled PowerShell interpreter.
 
 ## Prerequisites
 
-- [oh-my-posh](https://ohmyposh.dev/)
 - [PowerShell](https://github.com/PowerShell/PowerShell)
 
 ## Reposutory Contents
