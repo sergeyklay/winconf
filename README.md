@@ -15,7 +15,7 @@ but some scripts may work with bundled PowerShell interpreter.
 
 ## Reposutory Contents
 
-### Scripts
+### Scripts (`scripts/`)
 
 - [install_apps.ps1](#install_appsps1)
 - [install_configs.ps1](#install_configsps1)
@@ -28,7 +28,7 @@ Application installer.
 
 Configuration installer.
 
-### Configurations
+### Configurations (`configs/`)
 
 - [Microsoft.PowerShell_profile.ps1](#microsoftpowershell_profileps1)
 - [ohmyposhv3-v2.json](#ohmyposhv3-v2json)

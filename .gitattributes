@@ -5,10 +5,11 @@
 # Source code. Include these files to GitHub Linguist statistics.
 *.ps1            text eol=crlf linguist-language=powershell
 *.json           text eol=crlf linguist-languaget=JSON linguist-detectable=true
-gitconfig        text eol=lf linguist-language=gitconfig linguist-detectable=true
-global_gitignore text eol=lf linguist-language=gitignore linguist-detectable=true
-gpg.conf         text eol=lf linguist-language=INI linguist-detectable=true
-gpg-agent.conf   text eol=lf linguist-language=INI linguist-detectable=true
+
+configs/gitconfig        text eol=lf linguist-language=gitconfig linguist-detectable=true
+configs/global_gitignore text eol=lf linguist-language=gitignore linguist-detectable=true
+configs/gpg.conf         text eol=lf linguist-language=INI linguist-detectable=true
+configs/gpg-agent.conf   text eol=lf linguist-language=INI linguist-detectable=true
 
 # IDE files. Include these files to GitHub Linguist statistics.
 *.code-workspace  text eol=crlf linguist-language=jsonc linguist-detectable=true
