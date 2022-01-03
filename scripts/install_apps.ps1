@@ -66,6 +66,6 @@ foreach ($app in $languages) {
 Write-Host "Installing PowerShell modules..."
 Write-Host "------------------------------------" -ForegroundColor Green
 
-Install-Module -Name Terminal-Icons -Repository PSGallery
-Install-Module -Name PSReadLine -RequiredVersion 2.2.0-beta4 -AllowPreRelease
-Install-Module -Name z -AllowClobber
+Install-Module -Name Terminal-Icons -Repository PSGallery -Scope CurrentUser
+Install-Module -Name PSReadLine -Repository PSGallery -Scope CurrentUser -RequiredVersion 2.2.0-beta4 -AllowPreRelease
+Install-Module -Name z -Repository PSGallery -AllowClobber -Scope CurrentUser
