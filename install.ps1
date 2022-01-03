@@ -1,9 +1,28 @@
+<#
+.Synopsis
+  Install Serghei's dotfiles.
+
+.DESCRIPTION
+  Used for one-line PC setup. Includes package installs, system setup, etc.
+
+  Performs the following tasks, in order:
+  1. Install and configure Chocolatey
+  2. Install defined Chocolatey packages
+  3. Install package to auto-update all Chocolately packages via Windows Scheduled Tasks
+  4. Install PSDepend for package management
+  5. Determine PowerShell modules to install and import
+  6. Install and import modules based on list in #5
+
+.PARAMETER ChocoPackages
+ List of Chocolatey packages to install if missing
+#>
+
 # Windows 10/11 Setup Script.
 # Run this script in PowerShell.
 
 [CmdletBinding()]
 param (
-    [String[]]$Packages = @(
+    [String[]]$ChocoPackages = @(
         'bonjour',
         'calibre',
         'curl',
@@ -14,6 +33,7 @@ param (
 )
 
 # Package Management
+
 Write-Host 'Configuring Chocolatey...' -ForegroundColor Magenta
 if (-not (Get-Command -Name choco -ErrorAction SilentlyContinue)) {
     # Allow downloads
@@ -51,7 +71,7 @@ function Test-ChocolateyPackageInstalled {
 }
 
 $missing_packages = [System.Collections.ArrayList]::new()
-foreach ($package in $Packages) {
+foreach ($package in $ChocoPackages) {
   if (-not (Test-ChocolateyPackageInstalled($package))) {
     $missing_packages.Add($package)
   }
@@ -65,6 +85,14 @@ if ($missing_packages) {
 if (-not (Test-ChocolateyPackageInstalled('choco-upgrade-all-at'))) {
   & choco install choco-upgrade-all-at --params "'/WEEKLY:yes /DAY:SUN /TIME:01:00'" --force
 }
+
+# Add commonly used modules (this must be done first)
+
+Install-Module PSDepend -Scope CurrentUser
+Import-Module PSDepend
+
+Write-Host 'Installing PowerShell modules...' -ForegroundColor Magenta
+Invoke-PSDepend -Path "$PSScriptRoot\requirements.psd1" -Import -Force
 
 Write-Host "Installing common..."
 Write-Host "------------------------------------" -ForegroundColor Green
@@ -127,10 +155,3 @@ $languages = @(
 foreach ($app in $languages) {
     winget install --exact --id $app
 }
-
-Write-Host "Installing PowerShell modules..."
-Write-Host "------------------------------------" -ForegroundColor Green
-
-Install-Module -Name Terminal-Icons -Repository PSGallery -Scope CurrentUser
-Install-Module -Name PSReadLine -Repository PSGallery -Scope CurrentUser -RequiredVersion 2.2.0-beta4 -AllowPreRelease
-Install-Module -Name z -Repository PSGallery -AllowClobber -Scope CurrentUser
