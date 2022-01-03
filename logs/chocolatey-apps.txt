@@ -1,9 +1,0 @@
-autohotkey.portable
-bonjour
-calibre
-chocolatey
-chocolatey-core.extension
-curl
-SQLite
-totalcommander
-uninstalltool

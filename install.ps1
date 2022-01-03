@@ -1,9 +1,21 @@
 # Windows 10/11 Setup Script.
 # Run this script in PowerShell.
 
+[CmdletBinding()]
+param (
+    [String[]]$Packages = @(
+        'bonjour',
+        'calibre',
+        'curl',
+        'SQLite',
+        'totalcommander',
+        'uninstalltool'
+    )
+)
+
 # Package Management
 Write-Host 'Configuring Chocolatey...' -ForegroundColor Magenta
-if (-not (Get-Command -Name choco2 -ErrorAction SilentlyContinue)) {
+if (-not (Get-Command -Name choco -ErrorAction SilentlyContinue)) {
     # Allow downloads
     Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Force -Verbose
 
@@ -15,6 +27,43 @@ if (-not (Get-Command -Name choco2 -ErrorAction SilentlyContinue)) {
     choco feature enable -n allowGlobalConfirmation -y
 
     refreshenv
+}
+
+function Test-ChocolateyPackageInstalled {
+  <#
+  .LINK
+    https://octopus.com/docs/runbooks/runbook-examples/routine/installing-software-chocolatey
+  #>
+  Param (
+    [Parameter(Mandatory)]
+    [string]$Package
+  )
+
+  Process {
+    if (Test-Path -Path $env:ChocolateyInstall) {
+      $packageInstalled = Test-Path -Path "$env:ChocolateyInstall\lib\$Package"
+    } else {
+      Write-Host "Can't find a chocolatey install directory..."
+    }
+
+    return $packageInstalled
+  }
+}
+
+$missing_packages = [System.Collections.ArrayList]::new()
+foreach ($package in $Packages) {
+  if (-not (Test-ChocolateyPackageInstalled($package))) {
+    $missing_packages.Add($package)
+  }
+}
+
+if ($missing_packages) {
+  & choco install $missing_packages
+}
+
+# Keep packages up to date
+if (-not (Test-ChocolateyPackageInstalled('choco-upgrade-all-at'))) {
+  & choco install choco-upgrade-all-at --params "'/WEEKLY:yes /DAY:SUN /TIME:01:00'" --force
 }
 
 Write-Host "Installing common..."
