@@ -62,3 +62,10 @@ $languages = @(
 foreach ($app in $languages) {
     winget install --exact --id $app
 }
+
+Write-Host "Installing PowerShell modules..."
+Write-Host "------------------------------------" -ForegroundColor Green
+
+Install-Module -Name Terminal-Icons -Repository PSGallery
+Install-Module -Name PSReadLine -RequiredVersion 2.2.0-beta4 -AllowPreRelease
+Install-Module -Name z -AllowClobber

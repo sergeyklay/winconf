@@ -1,8 +1,6 @@
-#
-# Profile file.
+# PowerShell profile file.
 #
 # Copy this file to `$PROFILE` path.
-#
 
 using namespace System.Management.Automation
 using namespace System.Management.Automation.Language
@@ -12,6 +10,7 @@ if ($host.Name -eq 'ConsoleHost') {
 }
 
 Import-Module -Name Terminal-Icons
+oh-my-posh --init --shell pwsh --config ~/ohmyposhv3-v2.json | Invoke-Expression
 
 # Searching for commands with up/down arrow is really handy.  The
 # option "moves to end" is useful if you want the cursor at the end
@@ -30,9 +29,6 @@ Set-PSReadlineKeyHandler -Key Ctrl+Tab -Function TabCompleteNext
 
 # make PowerShell tab completion work like Bash
 Set-PSReadlineKeyHandler -Key Tab -Function MenuComplete
-
-oh-my-posh --init --shell pwsh --config ~/ohmyposhv3-v2.json | Invoke-Expression
-Import-Module -Name Terminal-Icons
 
 Set-PSReadLineOption -PredictionSource History
 Set-PSReadLineOption -PredictionViewStyle ListView
