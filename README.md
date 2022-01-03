@@ -15,22 +15,26 @@ but some scripts may work with bundled PowerShell interpreter.
 - [benpye/wsl-ssh-pageant](https://github.com/benpye/wsl-ssh-pageant)
 - [Caskaydia Cove Nerd Font](https://www.nerdfonts.com/font-downloads)
 
+## Install
+
+Below are the commands you can run to get started.
+
+To install apps run the following command in PowerShell as administrator:
+
+```powershell
+Invoke-Expression -Command ".\install.ps1"
+```
+
+To configure system run the following command in PowerShell as administrator:
+
+```powershell
+Invoke-Expression -Command ".\config.ps1"
+```
+
+**Note: Be sure to review the code before executing random scripts on the internet.**
+
 ## Repository Contents
 
-### Scripts
-
-These files are located in `scripts/` directory.
-
-- [install_apps.ps1](#install_appsps1)
-- [install_configs.ps1](#install_configsps1)
-
-#### `install_apps.ps1`
-
-Application installer.
-
-#### `install_configs.ps1`
-
-Configuration installer.
 
 ### Configurations
 

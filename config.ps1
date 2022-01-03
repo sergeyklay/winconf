@@ -1,8 +1,7 @@
 # Windows 10/11 Setup Script.
 # Run this script in PowerShell.
 
-$ProjectRoot = "${PSScriptRoot}\.." | Resolve-Path
-$ConfigRoot = "${ProjectRoot}\configs"
+$ConfigRoot = "${PSScriptRoot}\configs" | Resolve-Path
 
 Copy-Item -Path "${ConfigRoot}\Microsoft.PowerShell_profile.ps1" -Destination $PROFILE.CurrentUserCurrentHost
 Copy-Item -Path "${ConfigRoot}\ohmyposhv3-v2.json" -Destination $env:USERPROFILE\ohmyposhv3-v2.json
@@ -20,3 +19,5 @@ New-Item -ItemType Directory -Force -Path "${env:USERPROFILE}\vimfiles" | Out-Nu
 Robocopy "${ConfigRoot}\vimfiles" "${env:USERPROFILE}\vimfiles" /Z /W:5 /E /NFL /NDL /NJH /NJS /NP /NS /NC
 
 Copy-Item -Path "${ConfigRoot}\gpg-agnet.vbs" -Destination "${env:APPDATA}\Microsoft\Windows\Start Menu\Programs\Startup\gpg-agnet.vbs"
+
+# New-ItemProperty -Path "HKLM:\SOFTWARE\OpenSSH" -Name DefaultShell -Value "C:\Program Files\PowerShell\7\pwsh.exe"  -PropertyType String -Force
