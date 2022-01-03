@@ -1,6 +1,22 @@
 # Windows 10/11 Setup Script.
 # Run this script in PowerShell.
 
+# Package Management
+Write-Host 'Configuring Chocolatey...' -ForegroundColor Magenta
+if (-not (Get-Command -Name choco2 -ErrorAction SilentlyContinue)) {
+    # Allow downloads
+    Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Force -Verbose
+
+    # Install Chocolatey
+    [Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12
+    Invoke-WebRequest 'https://chocolatey.org/install.ps1' -UseBasicParsing | Invoke-Expression -Verbose
+
+    # Auto confirm package installations (no need to pass -y)
+    choco feature enable -n allowGlobalConfirmation -y
+
+    refreshenv
+}
+
 Write-Host "Installing common..."
 Write-Host "------------------------------------" -ForegroundColor Green
 
