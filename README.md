@@ -44,6 +44,7 @@ These files are located in `configs/` directory.
 - [gpg-agent.conf](#gpg-agentconf)
 - [gpg-agnet.vbs](#gpg-agnetvbs)
 - [gpg.conf](#gpgconf)
+- [sshcontrol](#sshcontrol)
 - [vimfiles](#vimfiles)
 
 #### `Microsoft.PowerShell_profile.ps1`
@@ -104,6 +105,14 @@ Should be copied to `$env:APPDATA\Microsoft\Windows\Start Menu\Programs\Startup\
 file read by gpg on startup.
 
 Should be copied to `$env:APPDATA\gnupg\gpg.conf`.
+
+#### `sshcontrol`
+
+List of allowed ssh keys. This file is used when support for the secure shell
+GnuPG Agent protocol has been enabled. For more see
+[GnuPG Agent Configuration page](https://www.gnupg.org/documentation/manuals/gnupg/Agent-Configuration.html).
+
+Should be copied to `$env:APPDATA\gnupg\sshcontrol`
 
 #### `vimfiles`
 

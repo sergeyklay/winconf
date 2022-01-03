@@ -10,6 +10,7 @@ configs/gitconfig        text eol=lf linguist-language=gitconfig linguist-detect
 configs/global_gitignore text eol=lf linguist-language=gitignore linguist-detectable=true
 configs/gpg.conf         text eol=lf linguist-language=INI linguist-detectable=true
 configs/gpg-agent.conf   text eol=lf linguist-language=INI linguist-detectable=true
+configs/sshcontrol       text eol=lf
 
 # IDE files. Include these files to GitHub Linguist statistics.
 *.code-workspace  text eol=crlf linguist-language=jsonc linguist-detectable=true
