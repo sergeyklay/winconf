@@ -10,7 +10,7 @@ if ($host.Name -eq 'ConsoleHost') {
 }
 
 Import-Module -Name Terminal-Icons
-oh-my-posh --init --shell pwsh --config ~/ohmyposhv3-v2.json | Invoke-Expression
+oh-my-posh --init --shell pwsh --config $env:USERPROFILE\ohmyposhv3-v2.json | Invoke-Expression
 
 # Searching for commands with up/down arrow is really handy.  The
 # option "moves to end" is useful if you want the cursor at the end
@@ -34,5 +34,25 @@ Set-PSReadLineOption -PredictionSource History
 Set-PSReadLineOption -PredictionViewStyle ListView
 Set-PSReadLineOption -EditMode Window
 
-# Setting up the path
-$env:Path += ";C:\Program Files\Vim\vim82"
+# Setup PATHs
+
+if (Test-Path -Path "$env:ProgramFiles\Vim\vim82") {
+    $env:Path += ";$env:ProgramFiles\Vim\vim82"
+}
+
+# Setup virtualenvwrapper
+
+# The variable WORKON_HOME tells virtualenvwrapper where to place
+# your virtual environments. If the directory does not exist when
+# virtualenvwrapper is loaded, it will be created automatically.
+if ($null -eq $env:WORKON_HOME) {
+    $env:WORKON_HOME = "$env:USERPROFILE\Envs"
+}
+
+# The variable PROJECT_HOME tells virtualenvwrapper where to place
+# your project working directories.
+if ($null -eq $env:PROJECT_HOME) {
+    if (Test-Path -Path "$env:USERPROFILE\Work") {
+        $env:PROJECT_HOME = "$env:USERPROFILE\Work"
+    }
+}
