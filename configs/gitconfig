@@ -7,6 +7,10 @@
 	autocrlf = input
 	safecrlf = warn
 	whitespace = trailing-space,space-before-tab,indent-with-non-tab
+	# -F  Quit if entire file fits on first screen.
+	# -R  Output "raw" control characters.
+	# -S  Chop long lines.
+	# -X  Don't use termcap init/deinit strings.
 	pager = less -FRSX
 	precomposeunicode = true
 	quotePath = false
