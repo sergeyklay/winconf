@@ -12,9 +12,12 @@
   4. Install PSDepend for package management
   5. Determine PowerShell modules to install and import
   6. Install and import modules based on list in #5
+  7. Install defined Winget packages
 
 .PARAMETER ChocoPackages
  List of Chocolatey packages to install if missing
+.PARAMETER WingetPackages
+ List of Winget packages to install if missing
 #>
 
 # Windows 10/11 Setup Script.
@@ -29,6 +32,23 @@ param (
         'SQLite',
         'totalcommander',
         'uninstalltool'
+    ),
+    [String[]]$WingetPackages = @(
+      'CPUID.CPU-Z',
+      'Microsoft.WindowsTerminal',
+      'JanDeDobbeleer.OhMyPosh',
+      'Microsoft.dotnet',
+      'Microsoft.dotNetFramework',
+      'Microsoft.dotnetRuntime.6-x64',
+      'Docker.DockerDesktop',
+      'Microsoft.VisualStudioCode',
+      'vim.vim',
+      'Git.Git',
+      'GitHub.cli',
+      'GnuPG.Gpg4win',
+      'DBBrowserForSQLite.DBBrowserForSQLite',
+      'Python.Python.3',
+      'GoLang.Go'
     )
 )
 
@@ -94,64 +114,16 @@ Import-Module PSDepend
 Write-Host 'Installing PowerShell modules...' -ForegroundColor Magenta
 Invoke-PSDepend -Path "$PSScriptRoot\requirements.psd1" -Import -Force
 
-Write-Host "Installing common..."
-Write-Host "------------------------------------" -ForegroundColor Green
+# Install defined Winget packages
 
-$common_apps = @(
-    "7zip.7zip",
-    "DjVuLibre.DjView",
-    "Telegram.TelegramDesktop",
-    "Zoom.Zoom",
-    "SlackTechnologies.Slack",
-    "VideoLAN.VLC",
-    "clsid2.mpc-hc",
-    "qBittorrent.qBittorrent",
-    "Rufus.Rufus",
-    "CPUID.CPU-Z")
-foreach ($app in $common_apps) {
-    winget install --exact --id $app
-}
+Write-Host 'Installing Winget packages...' -ForegroundColor Magenta
 
-Write-Host "Installing terminal support..."
-Write-Host "------------------------------------" -ForegroundColor Green
-$terminal_apps = @(
-    "Microsoft.WindowsTerminal",
-    "JanDeDobbeleer.OhMyPosh")
-foreach ($app in $terminal_apps) {
-    winget install --exact --id $app
-}
-
-Write-Host "Installing dotnet support..."
-Write-Host "------------------------------------" -ForegroundColor Green
-$dotnet_apps = @(
-    "Microsoft.dotnet",
-    "Microsoft.dotNetFramework",
-    "Microsoft.dotnetRuntime.6-x64")
-foreach ($app in $dotnet_apps) {
-    winget install --exact --id $app
-}
-
-Write-Host "Installing dev essentials..."
-Write-Host "------------------------------------" -ForegroundColor Green
-
-$dev_essentials = @(
-    "Docker.DockerDesktopEdge",
-    "Microsoft.VisualStudioCode",
-    "vim.vim",
-    "Git.Git",
-    "GitHub.cli",
-    "GnuPG.Gpg4win",
-    "DBBrowserForSQLite.DBBrowserForSQLite")
-foreach ($app in $dev_essentials) {
-    winget install --exact --id $app
-}
-
-Write-Host "Installing languages..."
-Write-Host "------------------------------------" -ForegroundColor Green
-
-$languages = @(
-    "Python.Python.3",
-    "GoLang.Go")
-foreach ($app in $languages) {
-    winget install --exact --id $app
+$pkgList = winget list
+foreach ($package in $WingetPackages) {
+    if ($pkgList | Select-String -Pattern $package.Replace('+', '\+') -Quiet) {
+        Write-Host "Package $package is already installed" -ForegroundColor Green
+    } else {
+        Write-Host "Installing $package" -ForegroundColor Yellow
+        winget install --exact --id $package
+    }
 }
