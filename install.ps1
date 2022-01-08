@@ -38,7 +38,6 @@ param (
       'Microsoft.WindowsTerminal',
       'JanDeDobbeleer.OhMyPosh',
       'Microsoft.dotnet',
-      'Microsoft.dotNetFramework',
       'Microsoft.dotnetRuntime.6-x64',
       'Docker.DockerDesktop',
       'Microsoft.VisualStudioCode',
