@@ -29,7 +29,6 @@ param (
         'bonjour',
         'curl',
         'SQLite',
-        'totalcommander',
         'uninstalltool'
     ),
     [String[]]$WingetPackages = @(
@@ -44,6 +43,7 @@ param (
       'vim.vim',
       'Git.Git',
       'GitHub.cli',
+      'Ghisler.TotalCommander',
       'GnuPG.Gpg4win',
       'DBBrowserForSQLite.DBBrowserForSQLite',
       'Python.Python.3',
