@@ -27,13 +27,13 @@
 param (
     [String[]]$ChocoPackages = @(
         'bonjour',
-        'calibre',
         'curl',
         'SQLite',
         'totalcommander',
         'uninstalltool'
     ),
     [String[]]$WingetPackages = @(
+      'calibre.calibre',
       'CPUID.CPU-Z',
       'Microsoft.WindowsTerminal',
       'JanDeDobbeleer.OhMyPosh',
